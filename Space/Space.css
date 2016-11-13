@@ -1,0 +1,291 @@
+* {
+    line-height: 1.2;
+    margin: 0
+}
+
+HTML {
+    color: #fff;
+    font-family: Sans-Serif;
+    height: 100%;
+    text-align: Center;
+    width: 100%
+}
+
+BODY {
+    background: #000;
+    vertical-align: Middle;
+    overflow: Hidden
+}
+
+#Space {
+    width: 100vw;
+    height: 100vh;
+    margin: -100px Auto 0;
+    position: Relative;
+    transform: Perspective(2160px) ScaleZ(3) RotateX(47deg);
+    overflow: Visible
+}
+
+#Space .Galaxy {
+    background: URL(Galaxy1080.png) No-Repeat Center Center;
+    background-size: 1080px 1080px;
+    width: 1080px;
+    height: 1080px;
+    margin: Auto;
+    position: Absolute
+}
+
+#Galaxy1 {
+    animation: Rotating1 200s Linear Infinite;
+    background-size: 1620px 1620px !important;
+    width: 1620px !important;
+    height: 1620px !important;
+    top: -270px;
+    left: calc(50vw - 810px);
+    opacity: .8
+}
+
+#Galaxy2 {
+    animation: Rotating2 20s Linear Infinite;
+    width: 1080px !important;
+    height: 1080px !important;
+    margin-top: -40px !important;
+    left: calc(50vw - 540px)
+}
+
+#Galaxy3 {
+    animation: Rotating3 70s Linear Infinite;
+    width: 1080px !important;
+    height: 1080px !important;
+    margin-top: -80px !important;
+    left: calc(50vw - 540px)
+}
+
+@keyframes Rotating1 {
+    From {
+        transform: Rotate(0deg)
+    }
+    To {
+        transform: Rotate(360deg)
+    }
+}
+
+@keyframes Rotating2 {
+    0% {
+        transform: Rotate(0deg);
+        opacity: 0
+    }
+    50% {
+        opacity: .7
+    }
+    100% {
+        transform: Rotate(360deg);
+        opacity: 0
+    }
+}
+
+@keyframes Rotating3 {
+    0% {
+        transform: Rotate(0deg);
+        filter: Hue-Rotate(360deg)
+    }
+    100% {
+        transform: Rotate(360deg);
+        filter: Hue-Rotate(0deg)
+    }
+}
+
+#NCC-1701 {
+    background: URL(Enterprise.png) No-Repeat Center Center;
+    animation: Warp 30s Linear Infinite;
+    animation-delay: .4s;
+    width: 117px;
+    height: 117px;
+    position: Absolute;
+    top: 50%;
+    left: 70%;
+    opacity: 0
+}
+
+@keyframes Warp {
+    0% {
+        top: 50%;
+        left: 50%;
+        opacity: 0;
+        filter: Blur(3px)
+    }
+    20% {
+        opacity: 1;
+        filter: Blur(0)
+    }
+    25% {
+        top: 60%;
+        left: 40%
+    }
+    80% {
+        opacity: 1
+    }
+    100% {
+        top: 110%;
+        left: 30%;
+        opacity: 0
+    }
+}
+
+.Comet {
+    background: URL(Comet.png) No-Repeat Center Center;
+    width: 117px;
+    height: 117px;
+    position: Absolute;
+    top: 50%;
+    left: 70%;
+    opacity: 0
+}
+
+#Comet1 {
+    animation: Comet 10s Linear Infinite Reverse;
+    animation-delay: 20s
+}
+
+#Comet2 {
+    animation: Comet 10s Linear Infinite Reverse;
+    animation-delay: 12s
+}
+
+@keyframes Comet {
+    0% {
+        top: 50%;
+        left: 50%;
+        width: 58px;
+        height: 58px;
+        background-size: 58px 58px;
+        opacity: 0
+    }
+    20% {
+        top: 60%;
+        left: 40%;
+        filter: Blur(2px);
+        opacity: 1
+    }
+    100% {
+        top: 112%;
+        left: 20%;
+        width: 117px;
+        height: 117px;
+        background-size: 117px 117px
+    }
+}
+
+#Stars, #Twinkling {
+    position: Absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: Block
+}
+
+#Stars {
+    background: URL(Stars.png) Repeat Center Center;
+    z-index: -2
+}
+
+#Twinkling {
+    background: URL(Twinkling.png) Repeat Center Center;
+    z-index: -1;
+    animation: Twinkle 600s Linear Infinite
+}
+
+@keyframes Twinkle {
+    0% {
+        background-position: 0 0
+    }
+    100% {
+        background-position: 5000px -15000px
+    }
+}
+
+#StarField {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: Absolute
+}
+
+#MSG {
+    position: Absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    margin-top: -100px;
+    margin-left: -200px;
+    font-family: Helvetica, Sans-Serif, Arial;
+    display: None;
+    text-align: Center;
+    color: #fff;
+    text-decoration: None;
+    text-shadow: #000 0 1px 20px
+}
+
+#MSG H1 {
+    line-height: 250px
+}
+
+#MSG H1:Before {
+    content: "\0000A0"
+}
+
+#MSG H2 {
+    font-weight: 100;
+    font-size: 50px;
+    line-height: 50px;
+    letter-spacing: -1px;
+    text-transform: UpperCase
+}
+
+#MSG H2:Before {
+    content: "LUC\039b S\039b"
+}
+
+#MSG H2:After {
+    content: "NT\039bRELL\039b"
+}
+
+#MSG P {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    margin-top: 20px;
+    color: RGBa(255, 255, 255, .3);
+    text-transform: UpperCase
+}
+
+#MSG P.Link {
+    margin-top: 20px;
+    letter-spacing: 10px
+}
+
+#MSG P.Link SPAN {
+    cursor: Pointer;
+    display: Inline-Block;
+    padding: 0 15px 15px;
+    border-bottom: 1px Solid RGBa(255, 255, 255, 0);
+    transition: All .4s Ease
+}
+
+#MSG P.Link SPAN:Before {
+    content: "\0000A0Cont"
+}
+
+#MSG P.Link SPAN:After {
+    content: "act"
+}
+
+#MSG P.Link SPAN:Hover {
+    color: RGBa(255, 255, 255, .8);
+    padding-bottom: 5px;
+    border-bottom: 1px Solid RGBa(255, 255, 255, .2)
+}
