@@ -2690,16 +2690,5 @@ var Base64 = {
         return b
     }
 };
-(function (a, s, h, A, l, o, m) {
-    a.GoogleAnalyticsObject = A;
-    a[A] || (a[A] = function () {
-        (a[A].m = a[A].m || []).push(arguments)
-    });
-    a[A].A = +new Date;
-    l = s.createElement(h);
-    o = s.getElementsByTagName(h)[0];
-    l.src = 'https://www.google-analytics.com/analytics.js';
-    o.parentNode.insertBefore(l, o)
-}(window, document, 'script', 'ga'));
 ga('create', 'UA-137570-16', 'auto');
 ga('send', 'pageview');
