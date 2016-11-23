@@ -13,4 +13,9 @@
     RewriteEngine On
     # Redirect .git to a 404, preventing people from cloning the repo
     RewriteRule ^.git(.*)$ /index.html [NC,L]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+   	RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule  (.*) /index.html [L]
+
 </IfModule>
