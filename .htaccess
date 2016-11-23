@@ -10,6 +10,7 @@
 </ifModule>
 
 <IfModule mod_rewrite.c>
+    RewriteEngine On
     # Redirect .git to a 404, preventing people from cloning the repo
     RewriteRule ^.git(.*)$ /index.html [NC,L]
 </IfModule>
