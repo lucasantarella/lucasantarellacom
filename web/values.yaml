@@ -19,28 +19,21 @@ service:
 ingress:
   enabled: true
   annotations:
-    kubernetes.io/ingress.class: nginx
-    kubernetes.io/tls-acme: "true"
+    kubernetes.io/ingress.class: istio
     external-dns.alpha.kubernetes.io/hostname: lucasantarella.com
-    certmanager.k8s.io/cluster-issuer: letsencrypt-prod
     ingress.kubernetes.io/configuration-snippet: |
       if ($host = 'www.lucasantarella.com' ) {
         rewrite ^ https://lucasantarella.com$request_uri permanent;
       }
   hosts:
     - host: lucasantarella.com
-      paths: 
-        - "/"
+      paths:
+        - "/*"
     - host: www.lucasantarella.com
       paths:
-        - "/"
+        - "/*"
 
-  tls: 
-    - secretName: lucasantarella-prod
-      hosts:
-        - lucasantarella.com
-        - www.lucasantarella.com
-
+  tls: []
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
@@ -51,7 +44,7 @@ resources: {}
   #   memory: 128Mi
   # requests:
   #   cpu: 100m
-  #   memory: 128Mi
+#   memory: 128Mi
 
 nodeSelector: {}
 
