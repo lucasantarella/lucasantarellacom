@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name:  {{ include "web.fullname" . }}-nginx-proxy-conf
+data:
+    default.conf: |
+        server {
+            listen 80;
+            root /usr/share/nginx/html/;
+
+            if ($host = 'www.lucasantarella.com' ) {
+                rewrite ^ https://lucasantarella.com$request_uri permanent;
+            }
+
+            if ($http_x_forwarded_proto = 'http') {
+                return 301 https://$host$request_uri;
+            }
+
+            location ~ /\.ht {
+                deny all;
+            }
+        }
